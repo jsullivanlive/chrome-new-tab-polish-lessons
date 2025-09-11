@@ -1,0 +1,897 @@
+[
+  {
+    "word": "kot",
+    "translation": "cat",
+    "fnphrase": "To jest mój kot.",
+    "enphrase": "This is my cat."
+  },
+  {
+    "word": "pies",
+    "translation": "dog",
+    "fnphrase": "Mój pies jest duży.",
+    "enphrase": "My dog is big."
+  },
+  {
+    "word": "dom",
+    "translation": "house",
+    "fnphrase": "Mieszkam w dużym domu.",
+    "enphrase": "I live in a big house."
+  },
+  {
+    "word": "szkoła",
+    "translation": "school",
+    "fnphrase": "Idę do szkoły codziennie.",
+    "enphrase": "I go to school every day."
+  },
+  {
+    "word": "książka",
+    "translation": "book",
+    "fnphrase": "Czytam ciekawą książkę.",
+    "enphrase": "I am reading an interesting book."
+  },
+  {
+    "word": "jabłko",
+    "translation": "apple",
+    "fnphrase": "Lubię jeść jabłka.",
+    "enphrase": "I like to eat apples."
+  },
+  {
+    "word": "samochód",
+    "translation": "car",
+    "fnphrase": "Mój samochód jest czerwony.",
+    "enphrase": "My car is red."
+  },
+  {
+    "word": "rower",
+    "translation": "bicycle",
+    "fnphrase": "Jeżdżę na rowerze do pracy.",
+    "enphrase": "I ride my bicycle to work."
+  },
+  {
+    "word": "miasto",
+    "translation": "city",
+    "fnphrase": "Warszawa to duże miasto.",
+    "enphrase": "Warsaw is a big city."
+  },
+  {
+    "word": "przyjaciel",
+    "translation": "friend",
+    "fnphrase": "Mam wielu przyjaciół.",
+    "enphrase": "I have many friends."
+  },
+  {
+    "word": "rodzina",
+    "translation": "family",
+    "fnphrase": "Moja rodzina jest ważna.",
+    "enphrase": "My family is important."
+  },
+  {
+    "word": "jedzenie",
+    "translation": "food",
+    "fnphrase": "Lubię polskie jedzenie.",
+    "enphrase": "I like Polish food."
+  },
+  {
+    "word": "woda",
+    "translation": "water",
+    "fnphrase": "Piję dużo wody.",
+    "enphrase": "I drink a lot of water."
+  },
+  {
+    "word": "praca",
+    "translation": "work",
+    "fnphrase": "Idę do pracy o ósmej.",
+    "enphrase": "I go to work at eight."
+  },
+  {
+    "word": "nauka",
+    "translation": "study",
+    "fnphrase": "Muszę się uczyć na egzamin.",
+    "enphrase": "I have to study for the exam."
+  },
+  {
+    "word": "muzyka",
+    "translation": "music",
+    "fnphrase": "Lubię słuchać muzyki.",
+    "enphrase": "I like to listen to music."
+  },
+  {
+    "word": "film",
+    "translation": "movie",
+    "fnphrase": "Oglądam dobry film.",
+    "enphrase": "I am watching a good movie."
+  },
+  {
+    "word": "kawa",
+    "translation": "coffee",
+    "fnphrase": "Piję kawę rano.",
+    "enphrase": "I drink coffee in the morning."
+  },
+  {
+    "word": "herbata",
+    "translation": "tea",
+    "fnphrase": "Lubię pić herbatę wieczorem.",
+    "enphrase": "I like to drink tea in the evening."
+  },
+  {
+    "word": "restauracja",
+    "translation": "restaurant",
+    "fnphrase": "Idziemy do restauracji na obiad.",
+    "enphrase": "We are going to a restaurant for lunch."
+  },
+  {
+    "word": "muzeum",
+    "translation": "museum",
+    "fnphrase": "Odwiedziliśmy muzeum wczoraj.",
+    "enphrase": "We visited the museum yesterday."
+  },
+  {
+    "word": "teatr",
+    "translation": "theater",
+    "fnphrase": "Chodzę do teatru co miesiąc.",
+    "enphrase": "I go to the theater every month."
+  },
+  {
+    "word": "sport",
+    "translation": "sport",
+    "fnphrase": "Uprawiam sport regularnie.",
+    "enphrase": "I practice sport regularly."
+  },
+  {
+    "word": "pogoda",
+    "translation": "weather",
+    "fnphrase": "Jaka jest dzisiaj pogoda?",
+    "enphrase": "What is the weather like today?"
+  },
+  {
+    "word": "dzień",
+    "translation": "day",
+    "fnphrase": "To był długi dzień.",
+    "enphrase": "It was a long day."
+  },
+  {
+    "word": "noc",
+    "translation": "night",
+    "fnphrase": "Lubię nocne spacery.",
+    "enphrase": "I like night walks."
+  },
+  {
+    "word": "tydzień",
+    "translation": "week",
+    "fnphrase": "Mam dużo pracy w tym tygodniu.",
+    "enphrase": "I have a lot of work this week."
+  },
+  {
+    "word": "miesiąc",
+    "translation": "month",
+    "fnphrase": "To był trudny miesiąc.",
+    "enphrase": "It was a tough month."
+  },
+  {
+    "word": "rok",
+    "translation": "year",
+    "fnphrase": "Minął kolejny rok.",
+    "enphrase": "Another year has passed."
+  },
+  {
+    "word": "czas",
+    "translation": "time",
+    "fnphrase": "Nie mam dużo czasu.",
+    "enphrase": "I don't have much time."
+  },
+  {
+    "word": "miłość",
+    "translation": "love",
+    "fnphrase": "Miłość jest piękna.",
+    "enphrase": "Love is beautiful."
+  },
+  {
+    "word": "szczęście",
+    "translation": "happiness",
+    "fnphrase": "Szczęście jest ważne w życiu.",
+    "enphrase": "Happiness is important in life."
+  },
+  {
+    "word": "smutek",
+    "translation": "sadness",
+    "fnphrase": "Czasami czuję smutek.",
+    "enphrase": "Sometimes I feel sadness."
+  },
+  {
+    "word": "złość",
+    "translation": "anger",
+    "fnphrase": "Złość nie jest dobra.",
+    "enphrase": "Anger is not good."
+  },
+  {
+    "word": "strach",
+    "translation": "fear",
+    "fnphrase": "Mam strach przed wysokościami.",
+    "enphrase": "I have a fear of heights."
+  },
+  {
+    "word": "radość",
+    "translation": "joy",
+    "fnphrase": "Dzieci przynoszą radość.",
+    "enphrase": "Children bring joy."
+  },
+  {
+    "word": "przyroda",
+    "translation": "nature",
+    "fnphrase": "Lubię spędzać czas na łonie przyrody.",
+    "enphrase": "I like to spend time in nature."
+  },
+  {
+    "word": "morze",
+    "translation": "sea",
+    "fnphrase": "Morze jest piękne o zachodzie słońca.",
+    "enphrase": "The sea is beautiful at sunset."
+  },
+  {
+    "word": "góry",
+    "translation": "mountains",
+    "fnphrase": "Wędruję po górach w weekendy.",
+    "enphrase": "I hike in the mountains on weekends."
+  },
+  {
+    "word": "las",
+    "translation": "forest",
+    "fnphrase": "Las jest pełen życia.",
+    "enphrase": "The forest is full of life."
+  },
+  {
+    "word": "rzeka",
+    "translation": "river",
+    "fnphrase": "Rzeka płynie przez miasto.",
+    "enphrase": "The river flows through the city."
+  },
+  {
+    "word": "jezioro",
+    "translation": "lake",
+    "fnphrase": "Lubię pływać w jeziorze latem.",
+    "enphrase": "I like to swim in the lake in summer."
+  },
+  {
+    "word": "słońce",
+    "translation": "sun",
+    "fnphrase": "Słońce świeci jasno.",
+    "enphrase": "The sun is shining brightly."
+  },
+  {
+    "word": "księżyc",
+    "translation": "moon",
+    "fnphrase": "Księżyc jest pełny tej nocy.",
+    "enphrase": "The moon is full tonight."
+  },
+  {
+    "word": "gwiazda",
+    "translation": "star",
+    "fnphrase": "Lubię patrzeć na gwiazdy.",
+    "enphrase": "I like to look at the stars."
+  },
+  {
+    "word": "niebo",
+    "translation": "sky",
+    "fnphrase": "Niebo jest niebieskie.",
+    "enphrase": "The sky is blue."
+  },
+  {
+    "word": "chmura",
+    "translation": "cloud",
+    "fnphrase": "Chmury zapowiadają deszcz.",
+    "enphrase": "Clouds are bringing rain."
+  },
+  {
+    "word": "deszcz",
+    "translation": "rain",
+    "fnphrase": "Lubię słuchać deszczu.",
+    "enphrase": "I like to listen to the rain."
+  },
+  {
+    "word": "śnieg",
+    "translation": "snow",
+    "fnphrase": "Zimą pada śnieg.",
+    "enphrase": "It snows in winter."
+  },
+  {
+    "word": "wiatr",
+    "translation": "wind",
+    "fnphrase": "Wiatr jest silny dzisiaj.",
+    "enphrase": "The wind is strong today."
+  },
+  {
+    "word": "ogień",
+    "translation": "fire",
+    "fnphrase": "Ogień jest ciepły.",
+    "enphrase": "Fire is warm."
+  },
+  {
+    "word": "ziemia",
+    "translation": "earth",
+    "fnphrase": "Ziemia jest naszą planetą.",
+    "enphrase": "Earth is our planet."
+  },
+  {
+    "word": "powietrze",
+    "translation": "air",
+    "fnphrase": "Oddycham świeżym powietrzem.",
+    "enphrase": "I breathe fresh air."
+  },
+  {
+    "word": "ogień",
+    "translation": "fire",
+    "fnphrase": "Ogień jest ciepły.",
+    "enphrase": "Fire is warm."
+  },
+  {
+    "word": "kamień",
+    "translation": "stone",
+    "fnphrase": "Kamień jest ciężki.",
+    "enphrase": "The stone is heavy."
+  },
+  {
+    "word": "piasek",
+    "translation": "sand",
+    "fnphrase": "Lubię chodziić po piasku.",
+    "enphrase": "I like to walk on the sand."
+  },
+  {
+    "word": "błoto",
+    "translation": "mud",
+    "fnphrase": "Dzieci bawią się w błocie.",
+    "enphrase": "Children play in the mud."
+  },
+  {
+    "word": "lód",
+    "translation": "ice",
+    "fnphrase": "Lód jest zimny.",
+    "enphrase": "Ice is cold."
+  },
+  {
+    "word": "ogień",
+    "translation": "fire",
+    "fnphrase": "Ogień jest ciepły.",
+    "enphrase": "Fire is warm."
+  },
+  {
+    "word": "wulkan",
+    "translation": "volcano",
+    "fnphrase": "Wulkan wybuchł w zeszłym roku.",
+    "enphrase": "The volcano erupted last year."
+  },
+  {
+    "word": "trzęsienie ziemi",
+    "translation": "earthquake",
+    "fnphrase": "Trzęsienie ziemi było silne.",
+    "enphrase": "The earthquake was strong."
+  },
+  {
+    "word": "powódź",
+    "translation": "flood",
+    "fnphrase": "Powódź zniszczyła wiele domów.",
+    "enphrase": "The flood destroyed many houses."
+  },
+  {
+    "word": "huragan",
+    "translation": "hurricane",
+    "fnphrase": "Huragan spowodował duże szkody.",
+    "enphrase": "The hurricane caused a lot of damage."
+  },
+  {
+    "word": "tornado",
+    "translation": "tornado",
+    "fnphrase": "Tornado przeszło przez miasto.",
+    "enphrase": "The tornado passed through the city."
+  },
+  {
+    "word": "burza",
+    "translation": "storm",
+    "fnphrase": "Burza była bardzo głośna.",
+    "enphrase": "The storm was very loud."
+  },
+  {
+    "word": "piorun",
+    "translation": "lightning",
+    "fnphrase": "Piorun uderzył w drzewo.",
+    "enphrase": "Lightning struck a tree."
+  },
+  {
+    "word": "grzmot",
+    "translation": "thunder",
+    "fnphrase": "Grzmot był bardzo głośny.",
+    "enphrase": "The thunder was very loud."
+  },
+  {
+    "word": "tęcza",
+    "translation": "rainbow",
+    "fnphrase": "Po deszczu pojawiła się tęcza.",
+    "enphrase": "A rainbow appeared after the rain."
+  },
+  {
+    "word": "mgła",
+    "translation": "fog",
+    "fnphrase": "Mgła była gęsta rano.",
+    "enphrase": "The fog was thick in the morning."
+  },
+  {
+    "word": "rosa",
+    "translation": "dew",
+    "fnphrase": "Rosa osiadła na trawie.",
+    "enphrase": "Dew settled on the grass."
+  },
+  {
+    "word": "szron",
+    "translation": "frost",
+    "fnphrase": "Szron pokrył okna zimą.",
+    "enphrase": "Frost covered the windows in winter."
+  },
+  {
+    "word": "śnieg",
+    "translation": "snow",
+    "fnphrase": "Zimą pada śnieg.",
+    "enphrase": "It snows in winter."
+  },
+  {
+    "word": "lód",
+    "translation": "ice",
+    "fnphrase": "Lód jest zimny.",
+    "enphrase": "Ice is cold."
+  },
+  {
+    "word": "zamieć",
+    "translation": "blizzard",
+    "fnphrase": "Zamieć była bardzo silna.",
+    "enphrase": "The blizzard was very strong."
+  },
+  {
+    "word": "śnieżyca",
+    "translation": "snowstorm",
+    "fnphrase": "Śnieżyca utrudniała jazdę.",
+    "enphrase": "The snowstorm made driving difficult."
+  },
+  {
+    "word": "śnieg stopniał",
+    "translation": "snow melted",
+    "fnphrase": "Śnieg stopniał wiosną.",
+    "enphrase": "The snow melted in spring."
+  },
+  {
+    "word": "śnieg pada",
+    "translation": "snow falls",
+    "fnphrase": "Zimą często pada śnieg.",
+    "enphrase": "It often snows in winter."
+  },
+  {
+    "word": "śnieg leży",
+    "translation": "snow lies",
+    "fnphrase": "Na ziemi leży śnieg.",
+    "enphrase": "Snow lies on the ground."
+  },
+  {
+    "word": "śnieg topnieje",
+    "translation": "snow thaws",
+    "fnphrase": "Śnieg topnieje w słońcu.",
+    "enphrase": "Snow thaws in the sun."
+  },
+  {
+    "word": "śnieg zamarza",
+    "translation": "snow freezes",
+    "fnphrase": "W nocy śnieg zamarza.",
+    "enphrase": "At night, snow freezes."
+  },
+  {
+    "word": "śnieg skrzypi",
+    "translation": "snow crunches",
+    "fnphrase": "Pod butami śnieg skrzypi.",
+    "enphrase": "Snow crunches underfoot."
+  },
+  {
+    "word": "śnieg błyszczy",
+    "translation": "snow glistens",
+    "fnphrase": "W słońcu śnieg błyszczy.",
+    "enphrase": "In the sun, snow glistens."
+  },
+  {
+    "word": "śnieg mrozi",
+    "translation": "snow chills",
+    "fnphrase": "Zimny śnieg mrozi skórę.",
+    "enphrase": "Cold snow chills the skin."
+  },
+  {
+    "word": "śnieg osiada",
+    "translation": "snow settles",
+    "fnphrase": "Śnieg osiada na drzewach.",
+    "enphrase": "Snow settles on the trees."
+  },
+  {
+    "word": "śnieg wiruje",
+    "translation": "snow swirls",
+    "fnphrase": "Wiatr powoduje, że śnieg wiruje.",
+    "enphrase": "The wind makes the snow swirl."
+  },
+  {
+    "word": "śnieg prószy",
+    "translation": "snow sprinkles",
+    "fnphrase": "Delikatnie prószy śnieg.",
+    "enphrase": "Snow sprinkles gently."
+  },
+  {
+    "word": "śnieg sypie",
+    "translation": "snow falls heavily",
+    "fnphrase": "Dzisiaj sypie gęsty śnieg.",
+    "enphrase": "Today, heavy snow is falling."
+  },
+  {
+    "word": "śnieg pada lekko",
+    "translation": "snow falls lightly",
+    "fnphrase": "Rano padał lekki śnieg.",
+    "enphrase": "In the morning, light snow was falling."
+  },
+  {
+    "word": "śnieg pada intensywnie",
+    "translation": "snow falls intensely",
+    "fnphrase": "W nocy padał intensywny śnieg.",
+    "enphrase": "At night, intense snow was falling."
+  },
+  {
+    "word": "śnieg pada ciągle",
+    "translation": "snow falls continuously",
+    "fnphrase": "Przez cały dzień padał ciągły śnieg.",
+    "enphrase": "All day long, continuous snow was falling."
+  },
+  {
+    "word": "śnieg pada sporadycznie",
+    "translation": "snow falls sporadically",
+    "fnphrase": "W zimie śnieg pada sporadycznie.",
+    "enphrase": "In winter, snow falls sporadically."
+  },
+  {
+    "word": "śnieg pada rzadko",
+    "translation": "snow falls rarely",
+    "fnphrase": "W tym regionie śnieg pada rzadko.",
+    "enphrase": "In this region, snow falls rarely."
+  },
+  {
+    "word": "śnieg pada sezonowo",
+    "translation": "snow falls seasonally",
+    "fnphrase": "W górach śnieg pada sezonowo.",
+    "enphrase": "In the mountains, snow falls seasonally."
+  },
+  {
+    "word": "śnieg pada zimą",
+    "translation": "snow falls in winter",
+    "fnphrase": "W Polsce śnieg pada głównie zimą.",
+    "enphrase": "In Poland, snow mainly falls in winter."
+  },
+  {
+    "word": "śnieg pada wiosną",
+    "translation": "snow falls in spring",
+    "fnphrase": "Czasami śnieg pada wiosną.",
+    "enphrase": "Sometimes snow falls in spring."
+  },
+  {
+    "word": "śnieg pada latem",
+    "translation": "snow falls in summer",
+    "fnphrase": "W górach śnieg może padać latem.",
+    "enphrase": "In the mountains, snow can fall in summer."
+  },
+  {
+    "word": "śnieg pada jesienią",
+    "translation": "snow falls in autumn",
+    "fnphrase": "Na początku jesieni śnieg może padać.",
+    "enphrase": "At the beginning of autumn, snow can fall."
+  },
+  {
+    "word": "śnieg pada w nocy",
+    "translation": "snow falls at night",
+    "fnphrase": "Często śnieg pada w nocy.",
+    "enphrase": "Snow often falls at night."
+  },
+  {
+    "word": "śnieg pada w dzień",
+    "translation": "snow falls during the day",
+    "fnphrase": "Czasami śnieg pada w dzień.",
+    "enphrase": "Sometimes snow falls during the day."
+  },
+  {
+    "word": "śnieg pada rano",
+    "translation": "snow falls in the morning",
+    "fnphrase": "Rano padał lekki śnieg.",
+    "enphrase": "In the morning, light snow was falling."
+  },
+  {
+    "word": "śnieg pada popołudniu",
+    "translation": "snow falls in the afternoon",
+    "fnphrase": "Popołudniu padał gęsty śnieg.",
+    "enphrase": "In the afternoon, heavy snow was falling."
+  },
+  {
+    "word": "śnieg pada wieczorem",
+    "translation": "snow falls in the evening",
+    "fnphrase": "Wieczorem padał intensywny śnieg.",
+    "enphrase": "In the evening, intense snow was falling."
+  },
+  {
+    "word": "śnieg pada w górach",
+    "translation": "snow falls in the mountains",
+    "fnphrase": "W górach śnieg pada często.",
+    "enphrase": "In the mountains, snow falls often."
+  },
+  {
+    "word": "śnieg pada na nizinach",
+    "translation": "snow falls in the lowlands",
+    "fnphrase": "Na nizinach śnieg pada rzadko.",
+    "enphrase": "In the lowlands, snow falls rarely."
+  },
+  {
+    "word": "śnieg pada na wsi",
+    "translation": "snow falls in the countryside",
+    "fnphrase": "Na wsi śnieg pada częściej niż w mieście.",
+    "enphrase": "In the countryside, snow falls more often than in the city."
+  },
+  {
+    "word": "śnieg pada w mieście",
+    "translation": "snow falls in the city",
+    "fnphrase": "W mieście śnieg pada rzadziej niż na wsi.",
+    "enphrase": "In the city, snow falls less often than in the countryside."
+  },
+  {
+    "word": "śnieg pada na dachy",
+    "translation": "snow falls on roofs",
+    "fnphrase": "Śnieg pada na dachy domów.",
+    "enphrase": "Snow falls on the roofs of houses."
+  },
+  {
+    "word": "śnieg pada na ulice",
+    "translation": "snow falls on streets",
+    "fnphrase": "Śnieg pada na ulice miasta.",
+    "enphrase": "Snow falls on the streets of the city."
+  },
+  {
+    "word": "śnieg pada na pola",
+    "translation": "snow falls on fields",
+    "fnphrase": "Śnieg pada na pola uprawne.",
+    "enphrase": "Snow falls on the farmland."
+  },
+  {
+    "word": "śnieg pada na lasy",
+    "translation": "snow falls on forests",
+    "fnphrase": "Śnieg pada na lasy i drzewa.",
+    "enphrase": "Snow falls on forests and trees."
+  },
+  {
+    "word": "śnieg pada na góry",
+    "translation": "snow falls on mountains",
+    "fnphrase": "Śnieg pada na szczyty gór.",
+    "enphrase": "Snow falls on mountain peaks."
+  },
+  {
+    "word": "śnieg pada na jeziora",
+    "translation": "snow falls on lakes",
+    "fnphrase": "Śnieg pada na powierzchnię jezior.",
+    "enphrase": "Snow falls on the surface of lakes."
+  },
+  {
+    "word": "śnieg pada na rzeki",
+    "translation": "snow falls on rivers",
+    "fnphrase": "Śnieg pada na brzegi rzek.",
+    "enphrase": "Snow falls on the banks of rivers."
+  },
+  {
+    "word": "śnieg pada na morze",
+    "translation": "snow falls on the sea",
+    "fnphrase": "Śnieg pada na powierzchnię morza.",
+    "enphrase": "Snow falls on the surface of the sea."
+  },
+  {
+    "word": "śnieg pada na plaże",
+    "translation": "snow falls on beaches",
+    "fnphrase": "Śnieg pada na piasek plaż.",
+    "enphrase": "Snow falls on the sand of beaches."
+  },
+  {
+    "word": "śnieg pada na łąki",
+    "translation": "snow falls on meadows",
+    "fnphrase": "Śnieg pada na zielone łąki.",
+    "enphrase": "Snow falls on green meadows."
+  },
+  {
+    "word": "śnieg pada na ogrody",
+    "translation": "snow falls on gardens",
+    "fnphrase": "Śnieg pada na kwiaty w ogrodach.",
+    "enphrase": "Snow falls on flowers in gardens."
+  },
+  {
+    "word": "śnieg pada na parki",
+    "translation": "snow falls on parks",
+    "fnphrase": "Śnieg pada na alejki w parkach.",
+    "enphrase": "Snow falls on paths in parks."
+  },
+  {
+    "word": "śnieg pada na place",
+    "translation": "snow falls on squares",
+    "fnphrase": "Śnieg pada na place miejskie.",
+    "enphrase": "Snow falls on city squares."
+  },
+  {
+    "word": "śnieg pada na ulice",
+    "translation": "snow falls on roads",
+    "fnphrase": "Śnieg pada na drogi i autostrady.",
+    "enphrase": "Snow falls on roads and highways."
+  },
+  {
+    "word": "śnieg pada na chodniki",
+    "translation": "snow falls on sidewalks",
+    "fnphrase": "Śnieg pada na chodniki w mieście.",
+    "enphrase": "Snow falls on sidewalks in the city."
+  },
+  {
+    "word": "śnieg pada na mosty",
+    "translation": "snow falls on bridges",
+    "fnphrase": "Śnieg pada na mosty nad rzekami.",
+    "enphrase": "Snow falls on bridges over rivers."
+  },
+  {
+    "word": "śnieg pada na tunele",
+    "translation": "snow falls on tunnels",
+    "fnphrase": "Śnieg pada na wejścia do tuneli.",
+    "enphrase": "Snow falls on tunnel entrances."
+  },
+  {
+    "word": "śnieg pada na lotniska",
+    "translation": "snow falls on airports",
+    "fnphrase": "Śnieg pada na pasy startowe lotnisk.",
+    "enphrase": "Snow falls on airport runways."
+  },
+
+  {
+    "word": "komputer",
+    "translation": "computer",
+    "fnphrase": "Pracuję na nowym komputerze.",
+    "enphrase": "I work on a new computer."
+  },
+  {
+    "word": "telefon",
+    "translation": "phone",
+    "fnphrase": "Mój telefon jest zepsuty.",
+    "enphrase": "My phone is broken."
+  },
+  {
+    "word": "muzyka",
+    "translation": "music",
+    "fnphrase": "Lubię słuchać muzyki.",
+    "enphrase": "I like to listen to music."
+  },
+  {
+    "word": "film",
+    "translation": "movie",
+    "fnphrase": "Oglądam dobry film.",
+    "enphrase": "I am watching a good movie."
+  },
+  {
+    "word": "kawa",
+    "translation": "coffee",
+    "fnphrase": "Piję kawę rano.",
+    "enphrase": "I drink coffee in the morning."
+  },
+  {
+    "word": "herbata",
+    "translation": "tea",
+    "fnphrase": "Lubię pić herbatę wieczorem.",
+    "enphrase": "I like to drink tea in the evening."
+  },
+  {
+    "word": "restauracja",
+    "translation": "restaurant",
+    "fnphrase": "Idziemy do restauracji na obiad.",
+    "enphrase": "We are going to a restaurant for lunch."
+  },
+  {
+    "word": "muzeum",
+    "translation": "museum",
+    "fnphrase": "Odwiedziliśmy muzeum wczoraj.",
+    "enphrase": "We visited the museum yesterday."
+  },
+  {
+    "word": "teatr",
+    "translation": "theater",
+    "fnphrase": "Chodzę do teatru co miesiąc.",
+    "enphrase": "I go to the theater every month."
+  },
+  {
+    "word": "sport",
+    "translation": "sport",
+    "fnphrase": "Uprawiam sport regularnie.",
+    "enphrase": "I practice sport regularly."
+  },
+  {
+    "word": "nauka",
+    "translation": "science",
+    "fnphrase": "Nauka jest fascynująca.",
+    "enphrase": "Science is fascinating."
+  },
+  {
+    "word": "technologia",
+    "translation": "technology",
+    "fnphrase": "Technologia zmienia świat.",
+    "enphrase": "Technology is changing the world."
+  },
+  {
+    "word": "sztuka",
+    "translation": "art",
+    "fnphrase": "Sztuka inspiruje ludzi.",
+    "enphrase": "Art inspires people."
+  },
+  {
+    "word": "historia",
+    "translation": "history",
+    "fnphrase": "Historia uczy nas o przeszłości.",
+    "enphrase": "History teaches us about the past."
+  },
+  {
+    "word": "filozofia",
+    "translation": "philosophy",
+    "fnphrase": "Filozofia bada fundamentalne pytania.",
+    "enphrase": "Philosophy explores fundamental questions."
+  },
+  {
+    "word": "psychologia",
+    "translation": "psychology",
+    "fnphrase": "Psychologia bada umysł ludzki.",
+    "enphrase": "Psychology studies the human mind."
+  },
+  {
+    "word": "ekonomia",
+    "translation": "economics",
+    "fnphrase": "Ekonomia analizuje rynki.",
+    "enphrase": "Economics analyzes markets."
+  },
+  {
+    "word": "polityka",
+    "translation": "politics",
+    "fnphrase": "Polityka wpływa na społeczeństwo.",
+    "enphrase": "Politics affects society."
+  },
+  {
+    "word": "kultura",
+    "translation": "culture",
+    "fnphrase": "Kultura kształtuje tożsamość.",
+    "enphrase": "Culture shapes identity."
+  },
+  {
+    "word": "religia",
+    "translation": "religion",
+    "fnphrase": "Religia ma duże znaczenie dla wielu ludzi.",
+    "enphrase": "Religion is very important to many people."
+  },
+  {
+    "word": "język",
+    "translation": "language",
+    "fnphrase": "Nauka języków jest fascynująca.",
+    "enphrase": "Learning languages is fascinating."
+  },
+  {
+    "word": "literatura",
+    "translation": "literature",
+    "fnphrase": "Lubię czytać klasyczną literaturę.",
+    "enphrase": "I like to read classic literature."
+  },
+  {
+    "word": "muzyka",
+    "translation": "music",
+    "fnphrase": "Muzyka łagodzi obyczaje.",
+    "enphrase": "Music soothes the soul."
+  },
+  {
+    "word": "teatr",
+    "translation": "theater",
+    "fnphrase": "Teatr to miejsce sztuki i rozrywki.",
+    "enphrase": "The theater is a place of art and entertainment."
+  },
+  {
+    "word": "film",
+    "translation": "film",
+    "fnphrase": "Film opowiada ciekawą historię.",
+    "enphrase": "The film tells an interesting story."
+  }
+]
