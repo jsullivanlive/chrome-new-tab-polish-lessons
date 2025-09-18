@@ -1,9 +1,10 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polish Quiz - New Tab</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polish Lessons Quiz</title>
   <style>
     body {
       margin: 0;
@@ -17,26 +18,62 @@
     }
 
     .quiz-container {
-      background: white;
+      position: relative;
+      min-height: 320px;
+      overflow-x: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .card {
+      background: #fff;
       border-radius: 15px;
-      padding: 30px;
-      max-width: 600px;
-      width: 90%;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      padding: 30px;
+      min-width: 400px;
+      max-width: 500px;
+      margin: 0 20px;
+      position: absolute;
+      z-index: 2;
+      transition: transform 0.5s cubic-bezier(.7,.2,.2,1), opacity 0.5s, z-index 0s 0.25s;
+      will-change: transform, opacity;
       text-align: center;
     }
 
-    .score {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: #4CAF50;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
+    .card-center {
+      z-index: 3;
+      transform: translateX(0) scale(1);
+      opacity: 1;
     }
+
+    .card-left {
+      z-index: 1;
+      opacity: 1;
+      transform: translateX(-120%) scale(0.9);
+      pointer-events: none;
+    }
+
+    .card-right {
+      z-index: 1;
+      opacity: 1;
+      transform: translateX(120%) scale(0.9);
+      pointer-events: none;
+    }
+
+    .card-answered {
+      pointer-events: none;
+    }
+
+    .card-new {
+      animation: slideInRight 0.5s cubic-bezier(.7,.2,.2,1);
+    }
+
 
     .question-number {
       color: #666;
@@ -159,24 +196,45 @@
       color: #666;
     }
 
+    @keyframes slideInRight {
+      from {
+        transform: translateX(200%) scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+      }
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      .quiz-container {
+      .card {
+        min-width: 320px;
+        max-width: 350px;
         padding: 20px;
-        margin: 10px;
+        margin: 0 10px;
       }
-      
+
       .question {
         font-size: 20px;
       }
-      
+
       .answer-btn {
         font-size: 16px;
         padding: 12px 15px;
+      }
+
+      .card-left {
+        transform: translateX(-110%) scale(0.85);
+      }
+
+      .card-right {
+        transform: translateX(110%) scale(0.85);
       }
     }
   </style>

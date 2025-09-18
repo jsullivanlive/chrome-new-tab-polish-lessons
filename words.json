@@ -893,5 +893,107 @@
     "translation": "film",
     "fnphrase": "Film opowiada ciekawą historię.",
     "enphrase": "The film tells an interesting story."
+  },
+  {
+    "word": "fotografia",
+    "translation": "photography",
+    "fnphrase": "Fotografia uchwyca chwile.",
+    "enphrase": "Photography captures moments."
+  },
+  {
+    "word": "architektura",
+    "translation": "architecture",
+    "fnphrase": "Architektura odzwierciedla kulturę.",
+    "enphrase": "Architecture reflects culture."
+  },
+  {
+    "word": "moda",
+    "translation": "fashion",
+    "fnphrase": "Moda zmienia się co sezon.",
+    "enphrase": "Fashion changes every season."
+  },
+  {
+    "word": "design",
+    "translation": "design",
+    "fnphrase": "Design łączy funkcję z estetyką.",
+    "enphrase": "Design combines function with aesthetics."
+  },
+  {
+    "word": "gotowanie",
+    "translation": "cooking",
+    "fnphrase": "Gotowanie to moja pasja.",
+    "enphrase": "Cooking is my passion."
+  },
+  {
+    "word": "podróże",
+    "translation": "travel",
+    "fnphrase": "Podróże poszerzają horyzonty.",
+    "enphrase": "Travel broadens horizons."
+  },
+  {
+    "word": "przygoda",
+    "translation": "adventure",
+    "fnphrase": "Przygoda czeka za rogiem.",
+    "enphrase": "Adventure awaits around the corner."
+  },
+  {
+    "word": "relaks",
+    "translation": "relaxation",
+    "fnphrase": "Relaks jest ważny dla zdrowia.",
+    "enphrase": "Relaxation is important for health."
+  },
+  {
+    "word": "medytacja",
+    "translation": "meditation",
+    "fnphrase": "Medytacja pomaga uspokoić umysł.",
+    "enphrase": "Meditation helps calm the mind."
+  },
+  {
+    "word": "joga",
+    "translation": "yoga",
+    "fnphrase": "Joga poprawia elastyczność ciała.",
+    "enphrase": "Yoga improves body flexibility."
+  },
+  {
+    "word": "fitness",
+    "translation": "fitness",
+    "fnphrase": "Fitness to sposób na zdrowie.",
+    "enphrase": "Fitness is a way to health."
+  },
+  {
+    "word": "zdrowie",
+    "translation": "health",
+    "fnphrase": "Zdrowie jest najważniejsze.",
+    "enphrase": "Health is the most important."
+  },
+  {
+    "word": "dieta",
+    "translation": "diet",
+    "fnphrase": "Dieta wpływa na samopoczucie.",
+    "enphrase": "Diet affects well-being."
+  },
+  {
+    "word": "ćwiczenia",
+    "translation": "exercise",
+    "fnphrase": "Ćwiczenia są kluczem do zdrowia.",
+    "enphrase": "Exercise is the key to health."
+  },
+  {
+    "word": "sen",
+    "translation": "sleep",
+    "fnphrase": "Dobry sen jest niezbędny.",
+    "enphrase": "Good sleep is essential."
+  },
+  {
+    "word": "hobby",
+    "translation": "hobby",
+    "fnphrase": "Hobby rozwija kreatywność.",
+    "enphrase": "Hobby develops creativity."
+  },
+  {
+    "word": "pasja",
+    "translation": "passion",
+    "fnphrase": "Pasja napędza życie.",
+    "enphrase": "Passion drives life."
   }
 ]
