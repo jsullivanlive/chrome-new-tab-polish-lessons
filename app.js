@@ -188,11 +188,6 @@ const generateQuestion = () => {
   console.log("generateQuestion called, questionsAnswered:", questionsAnswered);
   console.log("quizData length:", quizData.length);
 
-  if (questionsAnswered >= 5) {
-    showFinalScore();
-    return;
-  }
-
   if (!quizData || quizData.length === 0) {
     console.error("No quiz data available!");
     document.getElementById("output").innerHTML = `
@@ -247,25 +242,37 @@ const generateQuestion = () => {
 };
 
 const createCardElement = (card) => {
-  const questionText = card.type === "word-to-translation"
-    ? `"<strong>${card.question}</strong>"`
-    : `"<strong>${card.question}</strong>"`;
+  const questionText =
+    card.type === "word-to-translation"
+      ? `"<strong>${card.question}</strong>"`
+      : `"<strong>${card.question}</strong>"`;
 
   const answersHtml = card.answers
     .map((answer, index) => {
-      const answerText = card.type === "word-to-translation"
-        ? answer.translation
-        : answer.word;
+      const answerText =
+        card.type === "word-to-translation" ? answer.translation : answer.word;
 
       return `<button class="answer-btn" data-card-id="${card.id}" data-index="${index}">${answerText}</button>`;
     })
     .join("");
 
-  const cardElement = document.createElement('div');
-  cardElement.className = 'card card-new card-center';
+  const cardElement = document.createElement("div");
+  cardElement.className = "card card-new card-center";
   cardElement.id = `card-${card.id}`;
+  // Get current stats for progress display
+  const stats = LeitnerStorage.getAllStats();
+  const wordsReady = LeitnerStorage.getWordsForReview(quizData, 1000).length;
+
   cardElement.innerHTML = `
-    <div class="question-number">Question ${card.id + 1} of 5</div>
+    <div class="card-header">
+      <div class="question-number">Question ${card.id + 1}</div>
+      <div class="progress-info">
+        <small>${
+          stats.totalWords
+        } words practiced | ${wordsReady} due for review</small>
+        <button class="stats-mini-btn" onclick="showDetailedStats()" title="View detailed statistics">📊</button>
+      </div>
+    </div>
     <div class="question">${questionText}</div>
     <div class="answers">${answersHtml}</div>
   `;
@@ -280,17 +287,18 @@ const createCardElement = (card) => {
   });
 
   // Initialize quiz container if it doesn't exist
-  let container = document.querySelector('.quiz-container');
+  let container = document.querySelector(".quiz-container");
   if (!container) {
-    document.getElementById("output").innerHTML = '<div class="quiz-container"></div>';
-    container = document.querySelector('.quiz-container');
+    document.getElementById("output").innerHTML =
+      '<div class="quiz-container"></div>';
+    container = document.querySelector(".quiz-container");
   }
 
   container.appendChild(cardElement);
 
   // Remove animation class after animation completes
   setTimeout(() => {
-    cardElement.classList.remove('card-new');
+    cardElement.classList.remove("card-new");
   }, 500);
 };
 
@@ -299,14 +307,14 @@ const updateCardPositions = () => {
     const cardElement = document.getElementById(`card-${card.id}`);
     if (!cardElement) return;
 
-    cardElement.classList.remove('card-center', 'card-left', 'card-right');
+    cardElement.classList.remove("card-center", "card-left", "card-right");
 
     if (index === currentCardIndex) {
-      cardElement.classList.add('card-center');
+      cardElement.classList.add("card-center");
     } else if (index < currentCardIndex) {
-      cardElement.classList.add('card-left');
+      cardElement.classList.add("card-left");
     } else {
-      cardElement.classList.add('card-right');
+      cardElement.classList.add("card-right");
     }
   });
 };
@@ -409,89 +417,17 @@ const showFeedback = (card, selectedIndex) => {
 
   // Automatically progress after 2 seconds
   setTimeout(() => {
-    if (questionsAnswered < 5) {
-      currentCardIndex++;
-      generateQuestion();
-    } else {
-      showFinalScore();
-    }
+    currentCardIndex++;
+    generateQuestion();
   }, 2000);
 };
 
-
-const showFinalScore = () => {
-  const percentage = Math.round((score / 5) * 100);
-  let message = "";
-
-  if (percentage >= 80) {
-    message = "Excellent! 🌟";
-  } else if (percentage >= 60) {
-    message = "Good job! 👍";
-  } else {
-    message = "Keep practicing! 📚";
-  }
-
-  // Get Leitner statistics
-  const stats = LeitnerStorage.getAllStats();
-  const levelStats = Object.keys(LEITNER_LEVELS)
-    .map(
-      (level) =>
-        `<div class="level-stat">
-      <span class="level-name">${LEITNER_LEVELS[level].description}:</span> 
-      <span class="level-count">${stats.byLevel[level] || 0}</span>
-    </div>`
-    )
-    .join("");
-
-  // Create final score card
-  const finalCard = document.createElement("div");
-  finalCard.className = "card card-center";
-  finalCard.innerHTML = `
-    <div class="final-score">
-      <h2>Quiz Complete!</h2>
-      <div class="score-display">${score}/5 (${percentage}%)</div>
-      <div class="score-message">${message}</div>
-      
-      <div class="leitner-stats">
-        <h3>📚 Learning Progress</h3>
-        <div class="total-words">Total Words Practiced: ${stats.totalWords}</div>
-        <div class="level-breakdown">
-          ${levelStats}
-        </div>
-      </div>
-      
-      <div class="action-buttons">
-        <button class="restart-btn">Continue Learning</button>
-        <button class="stats-btn">View Detailed Stats</button>
-      </div>
-    </div>
-  `;
-
-  // Add event listeners
-  finalCard
-    .querySelector(".restart-btn")
-    .addEventListener("click", restartQuiz);
-  finalCard
-    .querySelector(".stats-btn")
-    .addEventListener("click", showDetailedStats);
-
-  // Replace all cards with final score card
-  const container = document.querySelector(".quiz-container");
-  container.innerHTML = "";
-  container.appendChild(finalCard);
-};
-
-const restartQuiz = () => {
-  score = 0;
-  questionsAnswered = 0;
-  cards = [];
-  currentCardIndex = 0;
-
+const continueLearning = () => {
   // Clear the container
   document.getElementById("output").innerHTML =
     '<div class="quiz-container"></div>';
 
-  // Start with first question
+  // Continue with next question
   generateQuestion();
 };
 
@@ -574,13 +510,13 @@ const showDetailedStats = () => {
         </div>
       </div>
       
-      <button class="back-btn">Back to Quiz</button>
+      <button class="back-btn">Continue Learning</button>
     </div>
   `;
 
   statsCard.querySelector(".back-btn").addEventListener("click", () => {
-    // Go back to main menu
-    restartQuiz();
+    // Continue learning
+    continueLearning();
   });
 
   const container = document.querySelector(".quiz-container");
@@ -589,7 +525,7 @@ const showDetailedStats = () => {
 };
 
 // Make globally accessible
-window.restartQuiz = restartQuiz;
+window.continueLearning = continueLearning;
 window.showDetailedStats = showDetailedStats;
 
 // Initialize the quiz
