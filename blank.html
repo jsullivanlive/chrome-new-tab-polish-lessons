@@ -237,6 +237,211 @@
         transform: translateX(110%) scale(0.85);
       }
     }
+
+    /* Leitner System Styles */
+    .leitner-info {
+      margin-top: 10px;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .leitner-stats {
+      margin: 25px 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .leitner-stats h3 {
+      margin: 0 0 15px 0;
+      color: #333;
+      text-align: center;
+    }
+
+    .total-words {
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #555;
+    }
+
+    .level-breakdown {
+      display: grid;
+      gap: 8px;
+    }
+
+    .level-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: white;
+      border-radius: 5px;
+      border-left: 4px solid #667eea;
+    }
+
+    .level-name {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .level-count {
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .stats-btn {
+      background: #6c757d;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .stats-btn:hover {
+      background: #5a6268;
+    }
+
+    /* Detailed Stats Styles */
+    .stats-card {
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .detailed-stats {
+      text-align: left;
+    }
+
+    .detailed-stats h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .stat-section {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .stat-section h3 {
+      margin: 0 0 15px 0;
+      color: #333;
+      text-align: center;
+    }
+
+    .level-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: white;
+      border-radius: 5px;
+      border-left: 4px solid #667eea;
+    }
+
+    .level-info {
+      flex: 1;
+    }
+
+    .level-name {
+      display: block;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .level-interval {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .level-count-large {
+      font-weight: bold;
+      font-size: 18px;
+      color: #667eea;
+    }
+
+    .recent-activity {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      margin-bottom: 5px;
+      background: white;
+      border-radius: 5px;
+      border-left: 4px solid #ddd;
+    }
+
+    .activity-item.correct {
+      border-left-color: #28a745;
+    }
+
+    .activity-item.incorrect {
+      border-left-color: #dc3545;
+    }
+
+    .activity-item .word {
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .activity-item .result {
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .activity-item .time {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .no-activity {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      padding: 20px;
+    }
+
+    .back-btn {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block;
+      margin: 20px auto 0;
+    }
+
+    .back-btn:hover {
+      background: #5a6fd8;
+    }
   </style>
 </head>
 

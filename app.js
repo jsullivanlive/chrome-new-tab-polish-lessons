@@ -10,6 +10,122 @@ let currentCardIndex = 0;
 let score = 0;
 let questionsAnswered = 0;
 
+// Leitner System Configuration
+const LEITNER_LEVELS = {
+  0: { interval: 0, description: "New/Failed" }, // Review immediately
+  1: { interval: 1, description: "Level 1" },   // Review after 1 day
+  2: { interval: 3, description: "Level 2" },   // Review after 3 days
+  3: { interval: 7, description: "Level 3" },   // Review after 1 week
+  4: { interval: 14, description: "Level 4" },  // Review after 2 weeks
+  5: { interval: 30, description: "Level 5" },  // Review after 1 month
+  6: { interval: 60, description: "Mastered" }  // Review after 2 months
+};
+
+// Local Storage Management for Leitner System
+const LeitnerStorage = {
+  getWordData(word) {
+    const data = localStorage.getItem(`leitner_${word}`);
+    return data ? JSON.parse(data) : {
+      level: 0,
+      correctCount: 0,
+      incorrectCount: 0,
+      lastReviewed: null,
+      nextReview: Date.now(),
+      history: []
+    };
+  },
+
+  updateWordData(word, isCorrect) {
+    const data = this.getWordData(word);
+    const now = Date.now();
+    
+    data.lastReviewed = now;
+    data.history.push({
+      timestamp: now,
+      correct: isCorrect,
+      level: data.level
+    });
+
+    if (isCorrect) {
+      data.correctCount++;
+      // Move up a level (max level 6)
+      data.level = Math.min(data.level + 1, 6);
+    } else {
+      data.incorrectCount++;
+      // Reset to level 0 on incorrect answer
+      data.level = 0;
+    }
+
+    // Calculate next review date based on new level
+    const intervalDays = LEITNER_LEVELS[data.level].interval;
+    data.nextReview = now + (intervalDays * 24 * 60 * 60 * 1000);
+
+    localStorage.setItem(`leitner_${word}`, JSON.stringify(data));
+    return data;
+  },
+
+  getWordsForReview(allWords, maxWords = 5) {
+    const now = Date.now();
+    const wordsWithData = allWords.map(word => ({
+      ...word,
+      leitnerData: this.getWordData(word.word),
+    }));
+
+    // Filter words that need review (nextReview <= now)
+    const wordsNeedingReview = wordsWithData.filter(item => 
+      item.leitnerData.nextReview <= now
+    );
+
+    // Sort by priority: lower level first, then by how overdue they are
+    wordsNeedingReview.sort((a, b) => {
+      if (a.leitnerData.level !== b.leitnerData.level) {
+        return a.leitnerData.level - b.leitnerData.level;
+      }
+      return a.leitnerData.nextReview - b.leitnerData.nextReview;
+    });
+
+    return wordsNeedingReview.slice(0, maxWords);
+  },
+
+  getAllStats() {
+    const stats = {
+      totalWords: 0,
+      byLevel: {},
+      recentActivity: []
+    };
+
+    // Initialize level counts
+    Object.keys(LEITNER_LEVELS).forEach(level => {
+      stats.byLevel[level] = 0;
+    });
+
+    // Scan all localStorage for leitner data
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('leitner_')) {
+        const data = JSON.parse(localStorage.getItem(key));
+        stats.totalWords++;
+        stats.byLevel[data.level]++;
+        
+        // Add recent activity
+        if (data.history && data.history.length > 0) {
+          const recentEntries = data.history.slice(-5);
+          stats.recentActivity.push(...recentEntries.map(entry => ({
+            word: key.replace('leitner_', ''),
+            ...entry
+          })));
+        }
+      }
+    }
+
+    // Sort recent activity by timestamp
+    stats.recentActivity.sort((a, b) => b.timestamp - a.timestamp);
+    stats.recentActivity = stats.recentActivity.slice(0, 20);
+
+    return stats;
+  }
+};
+
 
 
 const _first = (xmlDoc, tagname) => {
@@ -87,15 +203,28 @@ const generateQuestion = () => {
     return;
   }
 
+  // Use Leitner system to get words that need review
+  const wordsForReview = LeitnerStorage.getWordsForReview(quizData, 10);
+
+  // If no words need review, fall back to random selection
+  const availableWords = wordsForReview.length > 0 ? wordsForReview : quizData;
+
+  console.log(
+    `Using ${
+      wordsForReview.length > 0 ? "Leitner-selected" : "random"
+    } words for review`
+  );
+
   // Randomly decide if we show word->translation or translation->word
   const showWord = Math.random() > 0.5;
 
-  // Pick a random correct answer
-  const correctAnswer = quizData[Math.floor(Math.random() * quizData.length)];
+  // Pick a correct answer from available words
+  const correctAnswer =
+    availableWords[Math.floor(Math.random() * availableWords.length)];
 
-  // Pick 2 random wrong answers
+  // Pick 2 random wrong answers from the full dataset
   const wrongAnswers = quizData
-    .filter((item) => item !== correctAnswer)
+    .filter((item) => item.word !== correctAnswer.word)
     .sort(() => Math.random() - 0.5)
     .slice(0, 2);
 
@@ -109,7 +238,7 @@ const generateQuestion = () => {
     answers: allAnswers,
     question: showWord ? correctAnswer.word : correctAnswer.translation,
     answered: false,
-    isCorrect: null
+    isCorrect: null,
   };
 
   cards.push(newCard);
@@ -183,9 +312,14 @@ const updateCardPositions = () => {
 };
 
 const selectAnswer = (cardId, selectedIndex) => {
-  console.log("selectAnswer called with cardId:", cardId, "index:", selectedIndex);
+  console.log(
+    "selectAnswer called with cardId:",
+    cardId,
+    "index:",
+    selectedIndex
+  );
 
-  const card = cards.find(c => c.id === cardId);
+  const card = cards.find((c) => c.id === cardId);
   if (!card || card.answered) {
     console.error("Card not found or already answered!");
     return;
@@ -196,6 +330,19 @@ const selectAnswer = (cardId, selectedIndex) => {
 
   card.answered = true;
   card.isCorrect = isCorrect;
+
+  // Update Leitner system data
+  const updatedLeitnerData = LeitnerStorage.updateWordData(
+    card.correct.word,
+    isCorrect
+  );
+  card.leitnerData = updatedLeitnerData;
+
+  console.log(
+    `Word "${card.correct.word}" ${
+      isCorrect ? "correct" : "incorrect"
+    }, now at level ${updatedLeitnerData.level}`
+  );
 
   if (isCorrect) {
     score++;
@@ -224,18 +371,36 @@ const showFeedback = (card, selectedIndex) => {
 
   // Disable all buttons and mark card as answered
   buttons.forEach((btn) => (btn.disabled = true));
-  cardElement.classList.add('card-answered');
+  cardElement.classList.add("card-answered");
 
   // Show feedback message and example phrase
   const feedbackMsg = card.isCorrect ? "Correct! 🎉" : "Wrong! 😞";
 
+  // Get Leitner level info
+  const leitnerInfo = card.leitnerData
+    ? `<div class="leitner-info">
+      <small>📚 ${LEITNER_LEVELS[card.leitnerData.level].description} 
+      ${
+        card.leitnerData.level > 0
+          ? `(${card.leitnerData.correctCount}✓ ${card.leitnerData.incorrectCount}✗)`
+          : ""
+      }
+      </small>
+    </div>`
+    : "";
+
   const feedbackHtml = `
-    <div class="feedback ${card.isCorrect ? "feedback-correct" : "feedback-wrong"}">
+    <div class="feedback ${
+      card.isCorrect ? "feedback-correct" : "feedback-wrong"
+    }">
       <div class="feedback-message">${feedbackMsg}</div>
       <div class="word-details">
-        <strong>${card.correct.word}</strong> = <em>${card.correct.translation}</em>
+        <strong>${card.correct.word}</strong> = <em>${
+    card.correct.translation
+  }</em>
         <br/>
         <small>"${card.correct.fnphrase}" = "${card.correct.enphrase}"</small>
+        ${leitnerInfo}
       </div>
     </div>
   `;
@@ -266,24 +431,53 @@ const showFinalScore = () => {
     message = "Keep practicing! 📚";
   }
 
+  // Get Leitner statistics
+  const stats = LeitnerStorage.getAllStats();
+  const levelStats = Object.keys(LEITNER_LEVELS)
+    .map(
+      (level) =>
+        `<div class="level-stat">
+      <span class="level-name">${LEITNER_LEVELS[level].description}:</span> 
+      <span class="level-count">${stats.byLevel[level] || 0}</span>
+    </div>`
+    )
+    .join("");
+
   // Create final score card
-  const finalCard = document.createElement('div');
-  finalCard.className = 'card card-center';
+  const finalCard = document.createElement("div");
+  finalCard.className = "card card-center";
   finalCard.innerHTML = `
     <div class="final-score">
       <h2>Quiz Complete!</h2>
       <div class="score-display">${score}/5 (${percentage}%)</div>
       <div class="score-message">${message}</div>
-      <button class="restart-btn">Try Again</button>
+      
+      <div class="leitner-stats">
+        <h3>📚 Learning Progress</h3>
+        <div class="total-words">Total Words Practiced: ${stats.totalWords}</div>
+        <div class="level-breakdown">
+          ${levelStats}
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button class="restart-btn">Continue Learning</button>
+        <button class="stats-btn">View Detailed Stats</button>
+      </div>
     </div>
   `;
 
-  // Add event listener to restart button
-  finalCard.querySelector(".restart-btn").addEventListener("click", restartQuiz);
+  // Add event listeners
+  finalCard
+    .querySelector(".restart-btn")
+    .addEventListener("click", restartQuiz);
+  finalCard
+    .querySelector(".stats-btn")
+    .addEventListener("click", showDetailedStats);
 
   // Replace all cards with final score card
-  const container = document.querySelector('.quiz-container');
-  container.innerHTML = '';
+  const container = document.querySelector(".quiz-container");
+  container.innerHTML = "";
   container.appendChild(finalCard);
 };
 
@@ -294,14 +488,109 @@ const restartQuiz = () => {
   currentCardIndex = 0;
 
   // Clear the container
-  document.getElementById("output").innerHTML = '<div class="quiz-container"></div>';
+  document.getElementById("output").innerHTML =
+    '<div class="quiz-container"></div>';
 
   // Start with first question
   generateQuestion();
 };
 
+const showDetailedStats = () => {
+  const stats = LeitnerStorage.getAllStats();
+
+  // Calculate review schedule
+  const now = Date.now();
+  const reviewSchedule = {};
+  const today = new Date().toDateString();
+
+  // Scan localStorage for review dates
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith("leitner_")) {
+      const data = JSON.parse(localStorage.getItem(key));
+      const reviewDate = new Date(data.nextReview).toDateString();
+
+      if (!reviewSchedule[reviewDate]) {
+        reviewSchedule[reviewDate] = 0;
+      }
+      reviewSchedule[reviewDate]++;
+    }
+  }
+
+  // Create detailed stats display
+  const recentActivityHtml = stats.recentActivity
+    .slice(0, 10)
+    .map(
+      (activity) =>
+        `<div class="activity-item ${
+          activity.correct ? "correct" : "incorrect"
+        }">
+      <span class="word">${activity.word}</span>
+      <span class="result">${activity.correct ? "✓" : "✗"}</span>
+      <span class="time">${new Date(activity.timestamp).toLocaleString()}</span>
+    </div>`
+    )
+    .join("");
+
+  const statsCard = document.createElement("div");
+  statsCard.className = "card card-center stats-card";
+  statsCard.innerHTML = `
+    <div class="detailed-stats">
+      <h2>📊 Detailed Learning Stats</h2>
+      
+      <div class="stat-section">
+        <h3>Words Due Today: ${reviewSchedule[today] || 0}</h3>
+      </div>
+
+      <div class="stat-section">
+        <h3>Level Distribution</h3>
+        ${Object.keys(LEITNER_LEVELS)
+          .map(
+            (level) =>
+              `<div class="level-detail">
+            <div class="level-info">
+              <span class="level-name">Level ${level} - ${
+                LEITNER_LEVELS[level].description
+              }</span>
+              <span class="level-interval">(Review every ${
+                LEITNER_LEVELS[level].interval
+              } days)</span>
+            </div>
+            <div class="level-count-large">${
+              stats.byLevel[level] || 0
+            } words</div>
+          </div>`
+          )
+          .join("")}
+      </div>
+
+      <div class="stat-section">
+        <h3>Recent Activity</h3>
+        <div class="recent-activity">
+          ${
+            recentActivityHtml ||
+            '<div class="no-activity">No recent activity</div>'
+          }
+        </div>
+      </div>
+      
+      <button class="back-btn">Back to Quiz</button>
+    </div>
+  `;
+
+  statsCard.querySelector(".back-btn").addEventListener("click", () => {
+    // Go back to main menu
+    restartQuiz();
+  });
+
+  const container = document.querySelector(".quiz-container");
+  container.innerHTML = "";
+  container.appendChild(statsCard);
+};
+
 // Make globally accessible
 window.restartQuiz = restartQuiz;
+window.showDetailedStats = showDetailedStats;
 
 // Initialize the quiz
 (async () => {
