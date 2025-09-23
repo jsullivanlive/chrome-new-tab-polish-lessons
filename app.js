@@ -415,11 +415,12 @@ const showFeedback = (card, selectedIndex) => {
 
   cardElement.innerHTML += feedbackHtml;
 
-  // Automatically progress after 2 seconds
+  // Progress immediately if correct, or after 2 seconds if wrong
+  const delay = card.isCorrect ? 0 : 2000;
   setTimeout(() => {
     currentCardIndex++;
     generateQuestion();
-  }, 2000);
+  }, delay);
 };
 
 const continueLearning = () => {
